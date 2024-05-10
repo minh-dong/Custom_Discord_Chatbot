@@ -22,3 +22,6 @@
  !chat [message] - Chat with the bot!
  
  !rng - Will random number generator be in your favor?
+ 
+ !gettime - Will get the current time for the bot
+ 
