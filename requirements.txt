@@ -1,0 +1,5 @@
+discord
+Flask
+flask-SQLAlchemy
+flask-login
+colorama

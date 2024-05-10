@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <title>Dashboard</title>
+</head>
+<body>
+<h1><center>Welcome to the Dashboard</center></h1>
+
+<h2><center>Servers:</center></h2>
+
+{% for guild in guilds %}
+    <h3>{{guild[0]}} {{guild[1]}}</h3>
+{% endfor %}
+
+
+<h2><center>Filter:</center></h2>
+
+{% for filter in filters %}
+    <h3>{{filter.word}}</h3>
+{% endfor %}
+
+<form action="{{url_for('add_filter')}}" method="POST">
+    <input placeholder="Add Filter" name="word">
+    <button type="submit">Add Filter</button>
+</form>
+
+<form action="{{url_for('remove_filter')}}" method="POST">
+    <input placeholder="Remove Filter" name="word">
+    <button type="submit">Add Filter</button>
+</form>
+
+</body>
+</html>
