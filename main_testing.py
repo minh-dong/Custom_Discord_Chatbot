@@ -26,24 +26,6 @@ import fortune_teller
 # Admin stuff
 from admin import load, unload, reload
 
-# Variable to hold the json file that will be used in various defs
-knowledge_base_json_file: str = 'chatbot/knowledge_base.json'
-
-
-
-
-
-#class NotOwner(commands.CheckFailure):
-#    ...
-
-
-#def is_owner():
-#    async def predicate(ctx):
-#        if ctx.author.id != ctx.guild.owner_id:
-#            raise NotOwner("Hey you are not the owner")
-#        return True
-#    return commands.check(predicate)
-
 
 def run_discord() -> None:
     # Setting up the bot with commands and prefix and intents
@@ -99,89 +81,13 @@ def run_discord() -> None:
         file.close()
 
 
-        # Admin stuff
-        # @todo - the cogs are not being found properly. will need to do something here.
-        #         it is being called as appropiately, but it may be the "cog" not getting the right file name
-        print(cogs_found)
-        load(bot)
-        unload(bot)
-        reload(bot)
-
-#    @bot.command(hidden=True)
-#    @is_owner()
-#    async def load(ctx, cog: str):
-#        await bot.load_extension(f"cogs.{cog.lower()}")
-#        await ctx.send(f"Successfully loaded **{cog}.py**")
-#
-#    @load.error
-#    async def say_error(ctx, error):
-#        if isinstance(error, NotOwner):
-#            await ctx.send("Permission Denied")
-
-
-#    @bot.command(hidden=True)
-#    @is_owner()
-#    async def unload(ctx, cog: str):
-#        await bot.unload_extension(f"cogs.{cog.lower()}")
-#        await ctx.send(f"Successfully unloaded **{cog}.py**")
-#
-#    @unload.error
-#    async def say_error(ctx, error):
-#        if isinstance(error, NotOwner):
-#            await ctx.send("Permission Denied")
-
-#    @bot.command(hidden=True)
-#    @is_owner()
-#    async def reload(ctx, cog: str):
-#        await bot.reload_extension(f"cogs.{cog.lower()}")
-#        await ctx.send(f"Successfully reloaded **{cog}.py**")
-#
-#    @reload.error
-#    async def say_error(ctx, error):
-#        if isinstance(error, NotOwner):
-#            await ctx.send("Permission Denied")
-
-    # # Reference: https://about.abstractumbra.dev/discord.py/2023/01/29/sync-command-example.html
-    # @bot.command(hidden=True)
-    # @commands.guild_only()
-    # @is_owner()
-    # async def sync(ctx: commands.Context,
-    #                guilds: commands.Greedy[discord.Object],
-    #                spec: Optional[Literal["~", "*", "&"]] = None) -> None:
-    #     if not guilds:
-    #         if spec == "~":
-    #             synced = await ctx.bot.tree.sync(guild=ctx.guild)
-    #         elif spec == "*":
-    #             ctx.bot.tree.copy_global_to(guild=ctx.guild)
-    #             synced = await ctx.bot.tree.sync(guild=ctx.guild)
-    #         elif spec == "^":
-    #             ctx.bot.tree.clear_commands(guild=ctx.guild)
-    #             #await ctx.bot.tree.sync(guild=ctx.guild)
-    #             synced = []
-    #             await ctx.send('sync ^ involvked')
-    #         else:
-    #             synced = await ctx.bot.tree.sync()
-    #
-    #         await ctx.send(
-    #             f"Synced {len(synced)} commands {'globally' if spec is None else 'to the current guild.'}"
-    #         )
-    #         return
-    #
-    #     ret = 0
-    #     for guild in guilds:
-    #         try:
-    #             await ctx.bot.tree.sync(guild=guild)
-    #         except discord.HTTPException:
-    #             pass
-    #         else:
-    #             ret += 1
-    #
-    #     await ctx.send(f'Synced the tree to {ret}/{len(guilds)}.')
-    #
-    # @sync.error
-    # async def say_error(ctx, error):
-    #     if isinstance(error, NotOwner):
-    #         await ctx.send("Permission Denied")
+    # Admin stuff
+    # @todo - the cogs are not being found properly. will need to do something here.
+    #         it is being called as appropiately, but it may be the "cog" not getting the right file name
+    print(cogs_found)
+    load(bot)
+    unload(bot)
+    reload(bot)
 
     # Run the bot with the secret API key
     bot.run(settings.DISCORD_API_SECRET)

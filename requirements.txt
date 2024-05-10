@@ -3,3 +3,4 @@ Flask
 flask-SQLAlchemy
 flask-login
 colorama
+python-dotenv
