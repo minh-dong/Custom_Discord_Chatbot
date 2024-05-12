@@ -4,3 +4,4 @@ flask-SQLAlchemy
 flask-login
 colorama
 python-dotenv
+peewee
