@@ -8,7 +8,8 @@ from typing import Final
 # Load the environment
 load_dotenv()
 
-DISCORD_API_SECRET: Final[str] = os.getenv('DISCORD_TOKEN')
+DISCORD_API_TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
+DISCORD_API_SECRET: Final[str] = os.getenv('DISCORD_CLIENT_SECRET')
 
 BASE_DIR = pathlib.Path(__file__).parent
 

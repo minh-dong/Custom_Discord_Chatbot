@@ -92,4 +92,4 @@ def run_discord() -> None:
     reload(bot)
 
     # Run the bot with the secret API key
-    bot.run(settings.DISCORD_API_SECRET)
+    bot.run(settings.DISCORD_API_TOKEN)
