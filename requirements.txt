@@ -5,3 +5,4 @@ flask-login
 colorama
 python-dotenv
 peewee
+Zenora
