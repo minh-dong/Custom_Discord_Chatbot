@@ -5,9 +5,12 @@ from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
+#discord_files
+from discord_files.discord_text_files import get_members_text_file, get_guilds_text_file
+from discord_files.discord_databases import get_discord_db_path
 
 # SQLA
-engine = create_engine('sqlite:///discord.db')
+engine = create_engine(f'sqlite:///{get_discord_db_path()}')
 Base = declarative_base()
 
 class Member(Base):
@@ -27,7 +30,7 @@ session = Session()
 # @todo
 # FLASK RELATED STUFF
 def get_guilds() -> list:
-    file = open('guilds.txt', 'r')
+    file = open(get_guilds_text_file(), 'r')
     data = file.readlines()
     file.close()
     data = [i.replace('\n', '') for i in data]
@@ -37,7 +40,7 @@ def get_guilds() -> list:
 
 
 def get_members() -> list:
-    with open('members.txt', 'r') as file:
+    with open(get_members_text_file(), 'r') as file:
         data = file.readlines()
 
     data = [i.replace('\n', '') for i in data]
