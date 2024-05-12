@@ -24,4 +24,10 @@
  !rng - Will random number generator be in your favor?
  
  !gettime - Will get the current time for the bot
- 
+
+# Economy System
+ **USER'S ECONOMY INFO**
+ !balance - Get your current balance
+
+ **GAMES**
+ !coin [h | t] [bal : integer value]
