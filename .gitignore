@@ -1,6 +1,13 @@
-# Custom ignores
+# Custom ignores #
+
+# Logs file are not needed on github repo.
 logs/
+
+# No uploads for database files to github
 database/
+
+# the knowledge_base.json can be ignored and will change a lot as the bot is used
+chatbot/knowledge_base.json
 
 # ------------------- #
 
