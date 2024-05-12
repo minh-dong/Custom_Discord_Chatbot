@@ -26,8 +26,19 @@ import fortune_teller
 # Admin stuff
 from admin import load, unload, reload
 
+# For database
+from economy.models.account import Account
+#import database
+from economy import get_economy_database
+
+#discord_files
+from discord_files.discord_text_files import get_guilds_text_file, get_members_text_file
 
 def run_discord() -> None:
+    # Economy database
+    #database.db.create_tables([Account])
+    get_economy_database().create_tables([Account])
+
     # Setting up the bot with commands and prefix and intents
     intents: Intents = Intents.default()
     intents.message_content = True  # NOQA
@@ -65,7 +76,7 @@ def run_discord() -> None:
 
         # For flask stuff website
         # Get the current status for all of the servers
-        file = open('guilds.txt', 'w+')
+        file = open(get_guilds_text_file(), 'w+')
         guilds = bot.guilds
 
         for guild in guilds:
@@ -74,7 +85,7 @@ def run_discord() -> None:
 
         # Get the current status for all members within the servers
         members = bot.users
-        file = open('members.txt', 'w+')
+        file = open(get_members_text_file(), 'w+')
 
         for member in members:
             file.write(f'{member.id}:{member.name}\n')
