@@ -1,8 +1,6 @@
 # Custom ignores
-discord.db
-guilds.txt
-members.txt
 logs/
+database/
 
 # ------------------- #
 
