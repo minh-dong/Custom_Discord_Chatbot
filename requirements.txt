@@ -6,3 +6,4 @@ colorama
 python-dotenv
 peewee
 Zenora
+Random-Word
