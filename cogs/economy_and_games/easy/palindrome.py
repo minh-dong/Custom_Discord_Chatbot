@@ -14,7 +14,7 @@ from economy.games.palindrome.isPalindrome import isPalindrome
 from economy.games.palindrome.generateRandomWord import generateRandomWord
 
 from economy.models.account import Account
-
+from economy.balance import updateAccountBalance
 
 class Palindrome(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -29,6 +29,7 @@ class Palindrome(commands.Cog):
 
         # Fetch the account
         account = Account.fetch(ctx.message)
+
 
         # Check if user has enough money
         amount = 10
@@ -92,14 +93,17 @@ class Palindrome(commands.Cog):
             else:
                 await ctx.send("INVALID CHOICE! Please reply with **yes** or **no**")
 
+        # Update the account balance
+        updateAccountBalance(account, winner, amount)
+
         # Give the user some points
-        if winner is True:
-            account.amount += amount
-        else:
-            account.amount -= amount
+#        if winner is True:
+#            account.amount += amount
+#        else:
+#            account.amount -= amount
 
         # Save the account
-        account.save()
+#        account.save()
 
         # Send the message
         # @todo - ping the user
