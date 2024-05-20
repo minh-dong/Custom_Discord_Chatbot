@@ -9,6 +9,9 @@ database/
 # the knowledge_base.json can be ignored and will change a lot as the bot is used
 chatbot/knowledge_base.json
 
+# config.py should be some default value on github
+config.py
+
 # ------------------- #
 
 # Byte-compiled / optimized / DLL files
