@@ -4,7 +4,7 @@ import os
 
 if __name__ == '__main__':
     # Create .env for the first time
-    if os.path.exists(".env"):
+    if not os.path.exists(".env"):
         with open(".env", "w") as file:
             file.write("DISCORD_TOKEN=<YOUR DISCORD TOKEN HERE>")
             file.write("DISCORD_CLIENT_SECRET=<YOUR DISCORD CLIENT SECRET CODE HERE>")
@@ -19,3 +19,11 @@ if __name__ == '__main__':
 
     # Let the user know about creating the requirements.txt for the first time
     print("Run the following command in your terminal: pip install -r requirements.txt")
+
+    # Create the config.py file
+    if not os.path.exists("config.py"):
+        with open("config.py", "w") as file:
+            file.write("from urllib import parse\n")
+            file.write("\n")
+            file.write("DISCORD_REDIRECT_URL=<YOUR REDIRECT URL>\n")
+            file.write("DISCORD_OAUTH_URL=<YOUR OAUTH URL>\n")
