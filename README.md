@@ -26,4 +26,4 @@
  **GAMES** <br/>
  !coin [h | t] [bal : integer value] <br/>
  !palindrome <br>
- 
+ !dice <br>
