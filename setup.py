@@ -1,6 +1,5 @@
 # If it is first time setup, make sure to run this before running the main program!
 
-
 import os
 
 if __name__ == '__main__':
@@ -12,14 +11,11 @@ if __name__ == '__main__':
     else:
         print(".env file exists. Not creating...\n")
 
-
     # Create database/ directory for the first time
     try:
         os.mkdir("database")
     except OSError:
         print("database/ folder exist. Not creating...\n")
 
-
     # Let the user know about creating the requirements.txt for the first time
     print("Run the following command in your terminal: pip install -r requirements.txt")
-    
