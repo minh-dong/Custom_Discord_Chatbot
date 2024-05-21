@@ -56,7 +56,7 @@ class DoubleOrNothing(commands.Cog):
             amount_pooled *= 2
             await ctx.send(f'You win! {amount_pooled} will be credited to your account.')
         else:
-            amount_pooled = 0
+            amount_pooled = amount
             await ctx.send(f'Oh no! You lost! You now have {account.amount}')
 
         # Update the account balance for the user
