@@ -9,6 +9,15 @@
  
  Various bot commands are at the user's disposal when the bot is inside the Discord
  server. <br/>
+
+# How to run
+ This project will only work in Python 3.12 and beyond. Please make sure to have Python 3.12 installed on your system.<br>
+ <br>
+ Project was built on Windows 11. May or may not work for Linux (haven't tested it yet)
+
+
+ 1) Run the setup.py and the requirements.txt as stated in the setup.py
+ 2) Run main.py
  
 # Current working commands
  !ping - Pong <br/>
@@ -27,3 +36,5 @@
  !coin [h | t] [bal : integer value] <br/>
  !palindrome <br>
  !dice <br>
+ !double [amount : integer value] <br>
+ 
