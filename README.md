@@ -31,6 +31,7 @@ Project was built on Windows 11. May or may not work for Linux (haven't tested i
 
 # Economy System
 **USER'S ECONOMY INFO** <br/>
+!claim - Get your daily claim of 25 points (24 hour timer) <br/>
 !balance | !bal | !money - Get your current balance <br/>
 
  **GAMES** <br/>
