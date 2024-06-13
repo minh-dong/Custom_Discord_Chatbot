@@ -18,7 +18,8 @@ Project was built on Windows 11. May or may not work for Linux (haven't tested i
 1) Ensure that Python 3.12 is installed on your system
 2) Run the setup.py
 3) Run the following command in the terminal: pip install -r requirements.txt
-4) Run main.py
+4) [OPTIONAL] If you do not need a dashboard, comment out lines related to "flask" in the main.py
+5) Run main.py
  
 # Current working commands
 !ping - Pong <br/>
@@ -30,11 +31,15 @@ Project was built on Windows 11. May or may not work for Linux (haven't tested i
 !gettime - Will get the current time for the bot <br/>
 
 # Economy System
-**USER'S ECONOMY INFO** <br/>
+The economy is a balance system in any Discord server. All information and balance is stored in a SQL database 
+utilizing SQLite. All newly added users will start with a balance of **0 credits** and must use the following 
+**!claim** command to receive their daily credits.
+
+## Current Commands for User's Economy Info
 !claim - Get your daily claim of 25 points (24 hour timer) <br/>
 !balance | !bal | !money - Get your current balance <br/>
 
- **GAMES** <br/>
+## Games
 !coin [h | t] [bal : integer value] <br/>
 !palindrome <br>
 !dice <br>
