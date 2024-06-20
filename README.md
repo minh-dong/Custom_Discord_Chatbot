@@ -44,4 +44,4 @@ utilizing SQLite. All newly added users will start with a balance of **0 credits
 !palindrome <br>
 !dice <br>
 !double [amount : integer value] <br>
- 
+!blackjack <br>
