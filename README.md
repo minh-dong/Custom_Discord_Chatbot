@@ -13,7 +13,9 @@ server. <br/>
 # How to run
 This project will only work in Python 3.12 and beyond. Please make sure to have Python 3.12 installed on your system.<br>
 <br>
-Project was built on Windows 11. May or may not work for Linux (haven't tested it yet)
+
+> [!NOTE]
+> Project was built on Windows 11. May or may not work for Linux (haven't tested it yet)
 
 1) Ensure that Python 3.12 is installed on your system
 2) Run the setup.py
@@ -28,7 +30,7 @@ Project was built on Windows 11. May or may not work for Linux (haven't tested i
 !fortune - Get a random fortune from the list. Bad to good. <br/>
 !chat [message] - Chat with the bot! <br/>
 !rng - Will random number generator be in your favor? <br/>
-!gettime - Will get the current time for the bot <br/>
+!gettime [location : str value] | !time [location : str value] | !whatisthetime [location : str value] - Will get the current time for the bot <br/>
 
 # Economy System
 The economy is a balance system in any Discord server. All information and balance is stored in a SQL database 
