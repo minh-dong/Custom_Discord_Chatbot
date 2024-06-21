@@ -39,7 +39,7 @@ def card_conversion(hand: list) -> int:
 class Blackjack(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-        self.cards = ['A', '1', '2', '3', '4', '5', '6',
+        self.cards = ['A', '2', '3', '4', '5', '6',
                       '7', '8', '9', '10', 'J', 'Q', 'K',]
 
     @commands.hybrid_command(name="blackjack",
@@ -92,9 +92,13 @@ class Blackjack(commands.Cog):
                 player_message: str = ("Hit or Stand? (please type Hit or H for hit, Stand or S for stand). You will " +
                                        "automatically stand if you do not reply in 60s.\n")
 
+            # Change the list to a string instead
+            # @todo
+            hand_player_nicely_formatted: str = ' '.join(hand_player)
+
             # Send a message to the chat
             await ctx.send(f"Dealer's hand: {hand_dealer[0]}, ???\n" +
-                           f"Your hand: {hand_player[0:]}\n\n" +
+                           f"Your hand: {hand_player_nicely_formatted}\n\n" +
                            player_message)
 
             # If we are already at 21, we no longer need to wait for the user's prompt
@@ -157,8 +161,11 @@ class Blackjack(commands.Cog):
                 hand_dealer.append(choice(self.cards))
                 continue
 
+            # Nicely formatted string
+            hand_dealer_nicely_formatted: str = ' '.join(hand_dealer)
+
             # Send a message to the chat
-            await ctx.send(f"Dealer's hand: {hand_dealer[0:]}.\n {dealer_message}")
+            await ctx.send(f"Dealer's hand: {hand_dealer_nicely_formatted}.\n {dealer_message}")
 
         # Calculate who wins
         if value_dealer == 21:                      # Auto wins for dealer, lose
