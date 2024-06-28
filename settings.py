@@ -10,6 +10,8 @@ load_dotenv()
 
 DISCORD_API_TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
 DISCORD_API_SECRET: Final[str] = os.getenv('DISCORD_CLIENT_SECRET')
+PALWORLD_SERVER_URL: Final[str] = os.getenv('PALWORLD_SERVER_ADDRESS')
+PALWORLD_SECRET_AUTH: Final[str] = os.getenv('PALWORLD_SECRET_AUTH')
 
 BASE_DIR = pathlib.Path(__file__).parent
 

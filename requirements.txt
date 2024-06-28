@@ -7,3 +7,4 @@ python-dotenv
 peewee
 Zenora
 Random-Word
+requests

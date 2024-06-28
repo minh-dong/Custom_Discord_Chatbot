@@ -35,15 +35,25 @@ This project will only work in Python 3.12 and beyond. Please make sure to have 
 # Economy System
 The economy is a balance system in any Discord server. All information and balance is stored in a SQL database 
 utilizing SQLite. All newly added users will start with a balance of **0 credits** and must use the following 
-**!claim** command to receive their daily credits.
+**!claim** command to receive their daily credits. <br>
 
-## Current Commands for User's Economy Info
+### Current Commands for User's Economy Info
 !claim - Get your daily claim of 25 points (24 hour timer) <br/>
 !balance | !bal | !money - Get your current balance <br/>
 
-## Games
+### Games
 !coin [h | t] [bal : integer value] <br/>
 !palindrome <br>
 !dice <br>
 !double [amount : integer value] <br>
 !blackjack <br>
+
+# Commands for Palworld Server Management
+**<u>SERVER INFORMATION</u>** <br>
+!palplayerlist - Get the online players from the server <br>
+!palserverinfo - Get the current server information<br>
+!palservermetrics - Get the server metrics <br>
+!palserversettings - Get the server settings <br>
+
+**<u>OPERATOR</u>** <br>
+!palserversave - Save the world! <br>
