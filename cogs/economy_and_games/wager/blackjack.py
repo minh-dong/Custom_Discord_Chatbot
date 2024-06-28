@@ -72,6 +72,7 @@ class Blackjack(commands.Cog):
         value_dealer: int = 0
         bust_player: bool = False
         bust_dealer: bool = False
+        turn_player_autostand: bool = False
 
         # It's the player's turn
         while turn_player:
@@ -109,7 +110,8 @@ class Blackjack(commands.Cog):
                         reply_message = await self.bot.wait_for('message', timeout=60)
                     except asyncio.TimeoutError:
                         await ctx.send(f"You did not reply so you are automatically going to stand")
-                        reply_message = 'Stand'
+                        #reply_message = 'Stand'
+                        turn_player_autostand = True
                         break
 
                     # Make sure that only the user is replying and nobody else.
@@ -121,13 +123,13 @@ class Blackjack(commands.Cog):
                     # for reply messages and when to break
                     if reply_message.content.lower() in ['hit', 'h']:
                         break
-                    elif reply_message.content.lower() in ['stand', 's']:
+                    elif reply_message.content.lower() in ['stand', 's'] or turn_player_autostand:
                         break
                     else:
                         await ctx.send('Please respond appropriately to the prompt\n' +
                                        f'{player_message}')
             else:
-                reply_message = 's'
+                turn_player_autostand = True
 
             # Check for some conditions
             if value_player > 21:
@@ -138,7 +140,7 @@ class Blackjack(commands.Cog):
             elif value_player < 21 and reply_message.content.lower() in ['hit', 'h']:
                 # if hit, draw a new card from the deck
                 hand_player.append(choice(self.cards))
-            elif reply_message.content.lower() in ['stand', 's']:
+            elif reply_message.content.lower() in ['stand', 's'] or turn_player_autostand:
                 turn_player = False
                 turn_dealer = True
 
