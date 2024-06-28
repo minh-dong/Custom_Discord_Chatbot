@@ -1,8 +1,8 @@
+#
+# A set of functions (or in this case only one at the moment) that manipulates the balance
+#
 
-from economy.models.account import Account
-
-
-def updateAccountBalance(account, winner: bool, amount: int):
+def updateAccountBalance(account, winner: bool, amount: int) -> None:
     # the final amount to be used
     final_amount: int = amount
 
@@ -16,4 +16,5 @@ def updateAccountBalance(account, winner: bool, amount: int):
     else:
         account.amount -= final_amount
 
+    # Save the account to the SQLite database
     account.save()
