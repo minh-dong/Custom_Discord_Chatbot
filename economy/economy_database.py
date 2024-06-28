@@ -7,7 +7,7 @@ def get_economy_database() -> peewee.SqliteDatabase:
     # Get the database location
     file: str = get_economy_database_path()
 
-    print("Database for economy: ", file)
+    #print("Database for economy: ", file)
 
     # Return the database
     return peewee.SqliteDatabase(file)
