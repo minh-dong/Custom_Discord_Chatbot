@@ -27,5 +27,5 @@ class Account(peewee.Model):
             account = Account.create(user_id=message.author.id,
                                      guild_id=message.guild.id,
                                      amount=0,
-                                     next_claim=datetime.now() - timedelta(hours=24))
+                                     next_claim=datetime.now() - timedelta(hours=23))
         return account
