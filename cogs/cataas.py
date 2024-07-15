@@ -9,7 +9,8 @@ import discord
 from discord.ext import commands
 
 import requests
-
+#from PIL import Image
+import os
 
 class Cat(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -32,10 +33,24 @@ class Cat(commands.Cog):
     @commands.hybrid_command(name="cat",
                              brief="Get a cat picture!",
                              description="Cats are everywhere! Meow!")
-    async def ping(self, ctx: discord.ext.commands):
+    async def cat(self, ctx: discord.ext.commands):
         item: str = self.url + self.cat
         r: requests = requests.get(item)
-        await ctx.send(r.url)
+        filename: str = 'local_files/cat.jpg'
+
+        # Download the file
+        with open(filename, 'wb') as f:
+            f.write(r.content)
+
+#        if os.path.exists(filename):
+#            img = Image.open(filename)
+#            img.show()
+
+        # Upload the cat picture or send an error if cat.jpg isnt found
+        if os.path.exists(filename):
+            await ctx.send(file=discord.File(filename))
+        else:
+            await ctx.send('ERROR: No cat.jpg found. Please contact the admin with this issue.')
 
 
 # To add the bot to the cogs list

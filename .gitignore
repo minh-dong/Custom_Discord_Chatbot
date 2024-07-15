@@ -12,6 +12,9 @@ chatbot/knowledge_base.json
 # config.py should be some default value on github
 config.py
 
+# Do not upload local files. This is stored for server purposes only
+local_files/
+
 # ------------------- #
 
 # Byte-compiled / optimized / DLL files
