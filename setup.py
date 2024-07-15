@@ -27,3 +27,9 @@ if __name__ == '__main__':
             file.write("\n")
             file.write("DISCORD_REDIRECT_URL=<YOUR REDIRECT URL>\n")
             file.write("DISCORD_OAUTH_URL=<YOUR OAUTH URL>\n")
+
+    # Create the local_files directory
+    try:
+        os.mkdir("local_files")
+    except OSError:
+        print("local_files/ folder exist. Not creating...")
