@@ -17,11 +17,15 @@ This project will only work in Python 3.12 and beyond. Please make sure to have 
 > [!NOTE]
 > Project was built on Windows 11. May or may not work for Linux (haven't tested it yet)
 
+> [!IMPORTANT]
+> **WILL ASSUME THAT THE USER KNOWS HOW TO OBTAIN TOKENS FOR THE DISCORD BOT**
+
 1) Ensure that Python 3.12 is installed on your system
 2) Run the setup.py
 3) Run the following command in the terminal: pip install -r requirements.txt
 4) [OPTIONAL] If you do not need a dashboard, comment out lines related to "flask" in the main.py
-5) Run main.py
+5) Add your tokens to the .env as required
+6) Run main.py
  
 # Current working commands
 !ping - Pong <br/>
